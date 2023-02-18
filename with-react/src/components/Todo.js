@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import Modal from './Modal';
+import Backdrop from './Backdrop';
 
 export default function Todo(props) {
     const [showModal, setShowModal] = useState(false);
@@ -8,6 +9,11 @@ export default function Todo(props) {
     function clickHandler() {
         console.log('Button clicked');
         setShowModal(true);
+    }
+
+    function clickModal() {
+        console.log("Click sur Modal");
+        setShowModal(false);
     }
     return (
         <>
@@ -18,7 +24,8 @@ export default function Todo(props) {
                 </div>
             </div>
             {/* {showModal ? <Modal></Modal> : null} */}
-            {showModal && <Modal></Modal>}
+            {showModal && <Modal onNidhal={clickModal}></Modal>}
+            {showModal && <Backdrop onClick={clickModal}></Backdrop>}
         </>
     );
 }

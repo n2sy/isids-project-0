@@ -1,12 +1,13 @@
 
 import React from 'react'
 
-function Modal() {
+function Modal(props) {
+    console.log(props);
     return (
         <div className="modal">
             <p>Are you sure?</p>
-            <button className="btn btn--alt">Cancel</button>
-            <button className="btn">Confirm</button>
+            <button onClick={props.onNidhal} className="btn btn--alt">Cancel</button>
+            <button onClick={props.onNidhal} className="btn">Confirm</button>
         </div>
     )
 }
